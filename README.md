@@ -9,8 +9,7 @@ Here is how you can use it:
 - Go to the settings page of your app and copy its ID and Secret key.
 - Get an authentication code by typing ``https://oauth.vk.com/authorize?client_id=%YOUR_APP'S_ID%&display=popup&redirect_uri=https://api.vk.com/blank.html&scope=offline&response_type=code&v=5.95`` in your browser's address bar (substituting %YOUR_APP'S_ID% for the actual ID) and copying the code from the URL you will be redirected to.
 - Get the access token by typing ``https://oauth.vk.com/access_token?client_id=%YOUR_APP'S_ID%&client_secret=%SECRET_KEY%&redirect_uri=https://api.vk.com/blank.html&code=%CODE_FROM_PREVIOUS_STEP%`` in the address bar and copying it from the response.
-
-You have to store the access token to the ``config.txt`` file placed next to the script.
+- You have to store the access token to the ``config.txt`` file placed next to the script.
 
 2. Second, you should compile a list of URLs you would like to download. The URL list should be named %LANG%_vk_urls.txt, where %LANG% should coincide with the ``lang`` parameter in the code (see below). Each URL has to be written on a separate line and look like ``https://vk.com/...``. Only group and user pages are supported (but e.g. not the event pages). All bad URLs on the list will be skipped without causing the script to crash.
 
