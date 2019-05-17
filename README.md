@@ -4,15 +4,11 @@ Here is how you can use it:
 
 1. First, you have to obtain your personal access token from Vkontakte, in order to have access to the API. Here's how you do it (as of May 2019):
 
-1.1. You have to create an account there, if you don't have one already.
-
-1.2. After you log in, you have to create something called a VK App here: https://vk.com/editapp?act=create . Choose any name you want.
-
-1.3. Go to the settings page of your app and copy its ID and Secret key.
-
-1.4. Get an authentication code by typing ``https://oauth.vk.com/authorize?client_id=%YOUR_APP'S_ID%&display=popup&redirect_uri=https://api.vk.com/blank.html&scope=offline&response_type=code&v=5.95`` in your browser's address bar (substituting %YOUR_APP'S_ID% for the actual ID) and copying the code from the URL you will be redirected to.
-
-1.5. Get the access token by typing ``https://oauth.vk.com/access_token?client_id=%YOUR_APP'S_ID%&client_secret=%SECRET_KEY%&redirect_uri=https://api.vk.com/blank.html&code=%CODE_FROM_PREVIOUS_STEP%`` in the address bar and copying it from the response.
+- You have to create an account there, if you don't have one already.
+- After you log in, you have to create something called a VK App here: https://vk.com/editapp?act=create . Choose any name you want.
+- Go to the settings page of your app and copy its ID and Secret key.
+- Get an authentication code by typing ``https://oauth.vk.com/authorize?client_id=%YOUR_APP'S_ID%&display=popup&redirect_uri=https://api.vk.com/blank.html&scope=offline&response_type=code&v=5.95`` in your browser's address bar (substituting %YOUR_APP'S_ID% for the actual ID) and copying the code from the URL you will be redirected to.
+- Get the access token by typing ``https://oauth.vk.com/access_token?client_id=%YOUR_APP'S_ID%&client_secret=%SECRET_KEY%&redirect_uri=https://api.vk.com/blank.html&code=%CODE_FROM_PREVIOUS_STEP%`` in the address bar and copying it from the response.
 
 You have to store the access token to the ``config.txt`` file placed next to the script.
 
@@ -20,9 +16,8 @@ You have to store the access token to the ``config.txt`` file placed next to the
 
 3. Finally, you should edit the top-level code of the script (in the very end of it), if needed, and run it. There are two things you might want to change:
 
-3.1. When an instance of the ``VkHarvester`` class is created, the ``lang`` parameter is passed to it. It determines the paths of the URL list and of the directory where all your JSON files are goint to be stored. Change it to whatever suits you.
-
-3.2. The main function ``harvest()`` has an optional parameter ``overwrite_downloaded``, which is set to ``False`` by default. It means that if you resume downloading by re-running the script after it was stopped, the JSON files that already exist will not be overwritten, even if the corresponding pages have been updated since the last download. If you want the overwritten, change that parameter to ``True``.
+- When an instance of the ``VkHarvester`` class is created, the ``lang`` parameter is passed to it. It determines the paths of the URL list and of the directory where all your JSON files are goint to be stored. Change it to whatever suits you.
+- The main function ``harvest()`` has an optional parameter ``overwrite_downloaded``, which is set to ``False`` by default. It means that if you resume downloading by re-running the script after it was stopped, the JSON files that already exist will not be overwritten, even if the corresponding pages have been updated since the last download. If you want the overwritten, change that parameter to ``True``.
 
 Please bear in mind that downloading may take a lot of time, since the free VK API is limited to 3 requests per second, and batch requests for posts and comments are limited to 25 calls 100 entries each. Downloading a list of 100-200 URLs could take several days or even more, depending on the size of the pages.
 
