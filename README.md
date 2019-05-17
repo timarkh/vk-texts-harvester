@@ -2,7 +2,7 @@ This is a Python script that downloads texts (posts and comments) written by use
 
 Here is how you can use it:
 
-1. First, you have to obtain your personal access token from Vkontakte, in order to have access to the API. Here's how you do it (as of May 2019):
+*1.* First, you have to obtain your personal access token from Vkontakte, in order to have access to the API. Here's how you do it (as of May 2019):
 
 - You have to create an account there, if you don't have one already.
 - After you log in, you have to create something called a VK App here: https://vk.com/editapp?act=create . Choose any name you want.
@@ -11,9 +11,9 @@ Here is how you can use it:
 - Get the access token by typing ``https://oauth.vk.com/access_token?client_id=%YOUR_APP'S_ID%&client_secret=%SECRET_KEY%&redirect_uri=https://api.vk.com/blank.html&code=%CODE_FROM_PREVIOUS_STEP%`` in the address bar and copying it from the response.
 - You have to store the access token to the ``config.txt`` file placed next to the script.
 
-2. Second, you should compile a list of URLs you would like to download. The URL list should be named %LANG%_vk_urls.txt, where %LANG% should coincide with the ``lang`` parameter in the code (see below). Each URL has to be written on a separate line and look like ``https://vk.com/...``. Only group and user pages are supported (but e.g. not the event pages). All bad URLs on the list will be skipped without causing the script to crash.
+*2.* Second, you should compile a list of URLs you would like to download. The URL list should be named %LANG%_vk_urls.txt, where %LANG% should coincide with the ``lang`` parameter in the code (see below). Each URL has to be written on a separate line and look like ``https://vk.com/...``. Only group and user pages are supported (but e.g. not the event pages). All bad URLs on the list will be skipped without causing the script to crash.
 
-3. Finally, you should edit the top-level code of the script (in the very end of it), if needed, and run it. There are two things you might want to change:
+*3.* Finally, you should edit the top-level code of the script (in the very end of it), if needed, and run it. There are two things you might want to change:
 
 - When an instance of the ``VkHarvester`` class is created, the ``lang`` parameter is passed to it. It determines the paths of the URL list and of the directory where all your JSON files are goint to be stored. Change it to whatever suits you.
 - The main function ``harvest()`` has an optional parameter ``overwrite_downloaded``, which is set to ``False`` by default. It means that if you resume downloading by re-running the script after it was stopped, the JSON files that already exist will not be overwritten, even if the corresponding pages have been updated since the last download. If you want the overwritten, change that parameter to ``True``.
